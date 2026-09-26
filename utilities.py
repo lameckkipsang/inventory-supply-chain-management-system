@@ -8,3 +8,13 @@ def validate_email_address(email_input):
         return True
     else:
         return False
+
+def get_valid_integer(prompt_message):
+    """Ensures the user inputs a valid integer, handling exceptions to prevent crashing."""
+    while True:
+        user_input = input(prompt_message)
+        try:
+            valid_integer = int(user_input)
+            return valid_integer
+        except ValueError:
+            print("Error: Please enter a valid numerical value.")
