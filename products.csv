@@ -1,0 +1,52 @@
+product_id,product_name,category_name,cost_price,retail_price,stock_quantity,minimum_stock_threshold,supplier_id
+PROD-101,Samsung Galaxy S24 Ultra 256GB,Smartphones,850.00,1099.99,22,10,SUP-02
+PROD-102,Samsung Galaxy A15 128GB,Smartphones,140.00,189.99,45,15,SUP-02
+PROD-103,Apple iPhone 15 Pro 256GB,Smartphones,950.00,1199.99,8,10,SUP-03
+PROD-104,Apple iPhone 14 128GB,Smartphones,620.00,799.99,18,12,SUP-03
+PROD-105,Xiaomi Redmi Note 13 128GB,Smartphones,130.00,179.99,60,20,SUP-05
+PROD-106,Infinix Note 40 Pro 256GB,Smartphones,190.00,249.99,5,15,SUP-05
+PROD-107,Tecno Camon 30 128GB,Smartphones,160.00,219.99,30,15,SUP-05
+PROD-108,Google Pixel 8 128GB,Smartphones,480.00,649.99,12,10,SUP-03
+PROD-109,OnePlus 12 256GB,Smartphones,550.00,729.99,9,10,SUP-03
+PROD-110,Oppo Reno 11 256GB,Smartphones,320.00,429.99,25,15,SUP-05
+PROD-111,Apple MacBook Air M2 13-inch 256GB,Laptops,850.00,1099.99,10,8,SUP-01
+PROD-112,Apple MacBook Pro 14-inch M3 512GB,Laptops,1650.00,1999.99,4,6,SUP-01
+PROD-113,Dell XPS 13 Plus i7 512GB,Laptops,1050.00,1349.99,7,8,SUP-01
+PROD-114,Dell Inspiron 15 i5 512GB,Laptops,480.00,649.99,20,10,SUP-01
+PROD-115,HP Pavilion 15 Ryzen 5 512GB,Laptops,420.00,579.99,15,10,SUP-04
+PROD-116,HP EliteBook 840 G9 i7 1TB,Laptops,980.00,1249.99,6,8,SUP-04
+PROD-117,Lenovo ThinkPad X1 Carbon Gen 11,Laptops,1200.00,1499.99,5,6,SUP-04
+PROD-118,Lenovo IdeaPad Slim 3 Ryzen 5,Laptops,380.00,519.99,25,12,SUP-04
+PROD-119,Asus ROG Strix G16 RTX 4060,Laptops,1300.00,1649.99,3,6,SUP-01
+PROD-120,Acer Aspire 5 i5 512GB,Laptops,400.00,549.99,18,10,SUP-01
+PROD-121,Apple iPad 10th Gen 64GB,Tablets,320.00,429.99,14,10,SUP-03
+PROD-122,Apple iPad Pro 11-inch M4 256GB,Tablets,850.00,1099.99,5,6,SUP-03
+PROD-123,Samsung Galaxy Tab S9 128GB,Tablets,520.00,699.99,9,10,SUP-02
+PROD-124,Lenovo Tab M10 Plus 64GB,Tablets,110.00,159.99,30,15,SUP-04
+PROD-125,Amazon Fire HD 10 32GB,Tablets,90.00,129.99,22,12,SUP-05
+PROD-126,Apple AirPods Pro (2nd Gen),Audio,160.00,219.99,40,15,SUP-03
+PROD-127,Samsung Galaxy Buds2 Pro,Audio,110.00,149.99,35,15,SUP-02
+PROD-128,JBL Flip 6 Bluetooth Speaker,Audio,70.00,99.99,28,12,SUP-04
+PROD-129,Sony WH-1000XM5 Headphones,Audio,260.00,349.99,6,8,SUP-01
+PROD-130,Anker Soundcore Life Q30,Audio,45.00,69.99,50,20,SUP-05
+PROD-131,LG 55-inch 4K UHD Smart TV,Televisions,380.00,549.99,8,6,SUP-04
+PROD-132,Samsung 65-inch QLED 4K TV,Televisions,650.00,899.99,4,5,SUP-02
+PROD-133,Hisense 43-inch FHD Smart TV,Televisions,190.00,279.99,15,10,SUP-04
+PROD-134,TCL 50-inch 4K Android TV,Televisions,280.00,399.99,10,8,SUP-05
+PROD-135,Canon EOS R50 Mirrorless Camera,Cameras,620.00,799.99,5,6,SUP-01
+PROD-136,GoPro HERO12 Black,Cameras,320.00,429.99,9,8,SUP-03
+PROD-137,Nikon D3500 DSLR Kit,Cameras,380.00,519.99,6,6,SUP-01
+PROD-138,Apple Watch Series 9 45mm,Wearables,320.00,429.99,12,10,SUP-03
+PROD-139,Samsung Galaxy Watch 6 44mm,Wearables,220.00,299.99,15,10,SUP-02
+PROD-140,Fitbit Charge 6,Wearables,90.00,129.99,25,12,SUP-05
+PROD-141,Xiaomi Smart Band 8,Wearables,25.00,39.99,60,20,SUP-05
+PROD-142,Sony PlayStation 5 Slim 1TB,Gaming,480.00,599.99,5,6,SUP-01
+PROD-143,Microsoft Xbox Series S 512GB,Gaming,260.00,349.99,8,8,SUP-01
+PROD-144,Nintendo Switch OLED,Gaming,260.00,349.99,3,6,SUP-03
+PROD-145,Sony DualSense Wireless Controller,Gaming,45.00,69.99,40,15,SUP-01
+PROD-146,Logitech MX Master 3S Mouse,Accessories,70.00,99.99,30,15,SUP-04
+PROD-147,Logitech K380 Wireless Keyboard,Accessories,30.00,44.99,45,15,SUP-04
+PROD-148,Anker 20000mAh Power Bank,Accessories,25.00,39.99,55,20,SUP-05
+PROD-149,Anker 65W USB-C Charger,Accessories,18.00,29.99,60,20,SUP-05
+PROD-150,SanDisk 128GB microSD Card,Accessories,10.00,17.99,100,30,SUP-05
+PROD-151,Seagate 1TB External HDD,Accessories,40.00,59.99,35,15,SUP-04

@@ -1,0 +1,6 @@
+supplier_id,company_name,contact_email,lead_time_days
+SUP-01,TechHub Distributors,orders@techhub.com,4
+SUP-02,Mobile World Wholesale,sales@mobileworld.co.ke,3
+SUP-03,Global Gadgets Ltd,contact@globalgadgets.com,7
+SUP-04,Nairobi Electronics Supply,info@nairobielectronics.co.ke,5
+SUP-05,PanAsia Tech Imports,support@panasiatech.com,12
