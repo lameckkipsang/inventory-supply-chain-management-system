@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 class Product:
     def __init__(self, product_id, product_name, category_name, cost_price, retail_price, stock_quantity, minimum_stock_threshold, supplier_id):
         self.product_id = product_id
@@ -40,3 +41,14 @@ class Product:
             "minimum_stock_threshold": self.minimum_stock_threshold,
             "supplier_id": self.supplier_id
         }
+
+class Supplier(ABC):
+    def __init__(self, supplier_id, company_name, contact_email, lead_time_days):
+        self.supplier_id = supplier_id
+        self.company_name = company_name
+        self.contact_email = contact_email
+        self.lead_time_days = int(lead_time_days)
+
+    @abstractmethod
+    def get_delivery_terms(self):
+        pass
