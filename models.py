@@ -52,3 +52,11 @@ class Supplier(ABC):
     @abstractmethod
     def get_delivery_terms(self):
         pass
+#The use of polymorphism
+class LocalSupplier(Supplier):
+    def get_delivery_terms(self):
+        return f"{self.company_name} (Local) - Lead time: {self.lead_time_days} days. Dispatch method: Ground Transport."
+
+class InternationalSupplier(Supplier):
+    def get_delivery_terms(self):
+        return f"{self.company_name} (International) - Lead time: {self.lead_time_days} days. Dispatch method: Air Freight."
