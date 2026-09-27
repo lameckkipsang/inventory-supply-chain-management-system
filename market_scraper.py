@@ -10,7 +10,7 @@ def scrape_market_prices(target_url, output_csv_file):
         network_response.raise_for_status()
         
         parsed_html = BeautifulSoup(network_response.text, "html.parser")
-        product_elements = parsed_html.select(".prd _fb col c-prd")
+        product_elements = parsed_html.select("article.prd")
         
         scraped_products = []
         for product in product_elements:
