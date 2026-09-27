@@ -106,7 +106,7 @@ def scrape_market_prices(target_url, output_csv_file):
                 writer.writerows(scraped_products)
                 
             print(f"\nSuccess: Scraped {len(scraped_products)} products into {output_csv_file}")
-            print("--- Market Data Preview (First 5 Items) ---")
+            print("Market Data Preview (First 5 Items)")
             for product in scraped_products[:5]:
                 print(f"- {product['Title'][:35]}... | {product['Price']}")
         else:
