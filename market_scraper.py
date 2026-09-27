@@ -27,11 +27,17 @@ def scrape_market_prices(target_url, output_csv_file):
         
         if len(scraped_products) > 0:
             csv_headers = ["Title", "Category", "Price", "Link"]
-            with open(output_csv_file, mode="w", newline="", encoding="utf-8") as file_pointer:
-                csv_writer = csv.DictWriter(file_pointer, fieldnames=csv_headers)
+            with open(output_csv_file, mode="w", newline="", encoding="utf-8") as fhand:
+                csv_writer = csv.DictWriter(fhand, fieldnames=csv_headers)
                 csv_writer.writeheader()
                 csv_writer.writerows(scraped_products)
-            print(f"Scraped {len(scraped_products)} products into {output_csv_file}")
+                
+            print(f"\nSuccess: Scraped {len(scraped_products)} products into {output_csv_file}")
+            print("--- Market Data Preview (First 5 Items) ---")
+            
+            for product in scraped_products[:5]:
+                print(f"- {product['Title'][:35]}... | {product['Price']}")
+                
         else:
             print("No products found on the target page.")
             
