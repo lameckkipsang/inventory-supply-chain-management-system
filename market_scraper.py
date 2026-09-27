@@ -77,3 +77,40 @@ def extract_via_schema_json(soup, target_url):
             continue
             
     return products
+
+def scrape_market_prices(target_url, output_csv_file):
+    """Scrapes market prices using site configs with Schema.org fallback."""
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+    try:
+        response = requests.get(target_url, headers=headers, timeout=10)
+        response.raise_for_status()
+        
+        soup = BeautifulSoup(response.text, "html.parser")
+        domain = urlparse(target_url).netloc.replace("www.", "")
+        
+        scraped_products = []
+        
+        if domain in SITE_CONFIGS:
+            scraped_products = extract_via_selectors(soup, SITE_CONFIGS[domain], target_url)
+        
+        # Generic Schema.org fallback
+        if not scraped_products:
+            print("No domain match found. Attempting generic Schema.org extraction...")
+            scraped_products = extract_via_schema_json(soup, target_url)
+        
+        if len(scraped_products) > 0:
+            csv_headers = ["Title", "Category", "Price", "Link"]
+            with open(output_csv_file, mode="w", newline="", encoding="utf-8") as file:
+                writer = csv.DictWriter(file, fieldnames=csv_headers)
+                writer.writeheader()
+                writer.writerows(scraped_products)
+                
+            print(f"\nSuccess: Scraped {len(scraped_products)} products into {output_csv_file}")
+            print("--- Market Data Preview (First 5 Items) ---")
+            for product in scraped_products[:5]:
+                print(f"- {product['Title'][:35]}... | {product['Price']}")
+        else:
+            print("No products found on the target page.")
+            
+    except requests.exceptions.RequestException as network_error:
+        print(f"Failed to scrape data: {network_error}")
