@@ -13,3 +13,32 @@ def display_product_catalog():
     print("\nCurrent Inventory Catalog")
     for item in products:
         print(f"ID: {item['product_id']} | Name: {item['product_name']} | Stock: {item['stock_quantity']} | Price: KES {item['retail_price']}")
+
+def process_stock_transaction():
+    """Updates product stock and saves the changes to the CSV."""
+    products_database_path = "products.csv"
+    products = load_csv_data(products_database_path)
+    
+    target_id = input("Enter Product ID to update: ")
+    # We are reuusing get_valid_integer function from utilities through the import
+    quantity_change = get_valid_integer("Enter quantity to add (or negative to deduct): ")
+    
+    product_found = False
+    for item in products:
+        if item['product_id'] == target_id:
+            current_stock = int(item['stock_quantity'])
+            new_stock = current_stock + quantity_change
+            
+            if new_stock < 0:
+                print("Error: Transaction would result in negative stock.")
+                return
+                
+            item['stock_quantity'] = str(new_stock)
+            product_found = True
+            print(f"Success: {item['product_name']} stock updated to {new_stock}.")
+            break
+            
+    if product_found:
+        save_csv_data(products_database_path, products)
+    else:
+        print("Error: Product ID not found in database.")
