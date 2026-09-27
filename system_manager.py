@@ -55,7 +55,7 @@ def process_stock_transaction():
 
 def sync_prices_from_scraped_data():
     """Updates catalog product prices using scraped market data after admin authorization."""
-    print("\n--- SENSITIVE OPERATION: Market Price Synchronization ---")
+    print("\nSENSITIVE OPERATION: Market Price Synchronization")
     
     # 1. Authorization check
     if not verify_admin_authorization():
