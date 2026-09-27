@@ -2,7 +2,7 @@ from data_handler import load_csv_data, save_csv_data
 from utilities import get_valid_integer
 
 def display_product_catalog():
-    """Loads and displays all products from the core database."""
+    """Loads and displays all products, calculating total inventory valuation."""
     products_database_path = "products.csv"
     products = load_csv_data(products_database_path)
     
@@ -11,9 +11,19 @@ def display_product_catalog():
         return
 
     print("\nCurrent Inventory Catalog")
+    total_portfolio_value = 0.0
+    
     for item in products:
-        print(f"ID: {item['product_id']} | Name: {item['product_name']} | Stock: {item['stock_quantity']} | Price: KES {item['retail_price']}")
-
+        stock = int(item['stock_quantity'])
+        price = float(item['retail_price'])
+        item_value = stock * price
+        total_portfolio_value += item_value
+        
+        print(f"ID: {item['product_id']} | Name: {item['product_name'][:20]} | Stock: {stock} | Price: KES {price}")
+        
+    print("-" * 35)
+    print(f"Total Inventory Value: KES {total_portfolio_value:,.2f}")
+    
 def process_stock_transaction():
     """Updates product stock and saves the changes to the CSV."""
     products_database_path = "products.csv"
