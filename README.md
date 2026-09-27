@@ -2,8 +2,6 @@
 
 A modular, command-line interface (CLI) application built in Python for managing inventory, tracking stock transactions, validating supplier credentials, and scraping live competitor market data with admin-authorized price synchronization.
 
-This project emphasizes Object-Oriented Programming (OOP) principles, clean architecture, and local data persistence.
-
 ---
 
 ## Features
