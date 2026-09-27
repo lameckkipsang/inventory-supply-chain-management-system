@@ -1,29 +1,47 @@
 # CLI Inventory & Supply Chain Management System
 
-A modular, command-line interface (CLI) application built in Python for managing inventory, tracking stock transactions, and scraping live competitor market data. This project emphasizes Object-Oriented Programming (OOP) principles, clean architecture, and local data persistence.
+A modular, command-line interface (CLI) application built in Python for managing inventory, tracking stock transactions, validating supplier credentials, and scraping live competitor market data with admin-authorized price synchronization.
+
+This project emphasizes Object-Oriented Programming (OOP) principles, clean architecture, and local data persistence.
+
+---
 
 ## Features
 
-* **Interactive CLI:** A continuous, user-friendly terminal menu for navigating system features.
-* **Product Catalog & Valuation:** Displays current inventory with dynamic calculation of total portfolio value.
-* **Stock Transactions:** Safe updating of stock quantities with crash-prevention and negative-stock validation.
-* **Live Market Scraper:** Integrated web scraper utilizing `BeautifulSoup4` to pull live competitor pricing from Jumia, saving the output for offline analysis.
-* **Data Persistence:** Relational CSV file management acting as a lightweight local database.
-* **Data Validation:** Regex-powered email validation for supplier contacts and robust error handling for user inputs.
+* **Interactive CLI Interface:** A continuous terminal menu for navigation across all system features.
+* **Catalog Display & Portfolio Valuation:** Displays current inventory along with automatic calculation of total inventory portfolio value in KES.
+* **Crash-Safe Stock Transactions:** Securely add or subtract stock quantities with input validation to prevent negative stock levels.
+* **Live Competitor Web Scraper:** Scrapes live market pricing and product titles from Jumia using `requests` and `BeautifulSoup4`, saving results to `live_market_data.csv` with an instant CLI terminal preview.
+* **Admin-Authorized Price Synchronization:** Matches inventory products against scraped market data and updates catalog prices automatically behind password-protected authorization.
+* **Data Validation & Persistence:** Regex-based email verification for supplier records, crash-proof numeric inputs, and relational CSV file persistence.
 
-## Project Architecture (Separation of Concerns)
+---
 
-The application is heavily modularized to ensure maintainability:
-* `main.py`: The core application loop and CLI interface.
-* `models.py`: OOP definitions including the base `Product` class, encapsulation properties, and polymorphic `Supplier` subclasses.
-* `system_manager.py`: Core business logic bridging user inputs and data files.
-* `data_handler.py`: Safe read/write operations for CSV persistence.
-* `market_scraper.py`: Web scraping logic with robust network error handling.
-* `utilities.py`: Shared helper functions, including regex validation and crash-safe inputs.
+## Project Architecture & Separation of Concerns
 
-## Prerequisites
+The application is structured into modular components to ensure maintainability:
 
-To run this project, you will need Python 3.x installed on your machine along with the following external libraries:
+| Module | Responsibilities |
+| :--- | :--- |
+| `main.py` | Application entry point, interactive menu loop, user prompt dispatching |
+| `models.py` | OOP domain models (`Product`, `Supplier` abstractions, property validation) |
+| `system_manager.py` | Core business logic (portfolio valuation, stock updating, price sync) |
+| `data_handler.py` | Reusable CSV read/write operations (`load_csv_data`, `save_csv_data`) |
+| `market_scraper.py` | Web scraping logic, HTML parsing, CLI data preview generation |
+| `utilities.py` | Shared utilities (`get_valid_integer`, regex email checks, admin password verification) |
+
+---
+
+## Prerequisites & Setup
+
+### 1. Requirements
+* Python 3.8 or higher
+* Required Python libraries: `requests`, `beautifulsoup4`
+
+### 2. Installation
+Clone the repository and install dependencies:
 
 ```bash
-pip install requests beautifulsoup4
+git clone https://github.com/lameckkipsang/inventory-supply-chain-management-system.git
+cd inventory-supply-chain-management-system
+pip install -r requirements.txt
