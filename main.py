@@ -30,7 +30,7 @@ def main():
                 print("Error: Invalid email format.")
                 
         elif user_choice == '4':
-            target_url = input("Enter valid Jumia category URL to scrape: ")
+            target_url = input("Enter valid e-commerce URL to scrape: ")
             output_file = "live_market_data.csv"
             print(f"Initializing scraper for {target_url}...")
             scrape_market_prices(target_url, output_file)
